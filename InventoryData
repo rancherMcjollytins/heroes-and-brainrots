@@ -1,0 +1,61 @@
+
+# superclass
+class Product:
+    def __init__(self, product_id, name, price, quantity):
+        # TODO: Initialise attributes
+        self.product_id = product_id
+        self.name = name
+        self.price = price
+        self.quantity = quantity
+                # TODO: Modify stock level safely
+        def update_stock(self, amount):
+            amount = int(input("Update stock level (positive to raise, negative to lower.)"))
+            if (self.quantity + amount) < 0:
+                print("quantity can not be less than 0! Setting stock to 0.")
+                self.quantity = 0
+                return f"Stock set to {self.quantity}."
+            elif self.quantity + amount >- 0:
+                print(f"Setting stock to {self.quantity}...")
+                self.quantity = self.quantity + amount
+                return f"Stock set to {self.quantity}."
+            else:
+                print("An error occurred!")
+
+
+        
+
+
+    def get_total_value(self):
+        # TODO: Calculate and return financial value
+        
+        return self.price * self.quantity
+
+    def __str__(self):
+        # TODO: Format output nicely
+        return f"Product: {self.name} :||: ID: {self.product_id} :||: Price: {self.price} :||: Stock: x{self.quantity}"
+
+class Inventory:
+    def __init__(self):
+        #Hah????
+        self.products = {} # Maps product_id -> Product object
+
+    def add_product(self, product):
+        # TODO: Add to dictionary
+        pass
+
+    def display_all(self):
+        # TODO: Iterate and print
+        pass
+
+if __name__ == "__main__": # research what __main__ and __name__ actually does!
+    # TODO: Write a while loop to interact with user 
+    print("||--Welcome to the Inventory Manager--||")
+    print("||:----------------------------------:||")
+    while True:
+        print("1. Manage Product")
+        print("2. Manage Inventory")
+        print("3. Quit")
+        print("||:----------------------------------:||")
+        userInput = input("Choose options 1-3:  ")
+        print(f"> {userInput}")
+        
